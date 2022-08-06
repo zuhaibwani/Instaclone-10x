@@ -1,0 +1,56 @@
+.lpcontainer{
+    background-color: rgb(108 129 153);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 45rem;
+    width: 100%;
+}
+.leftDiv{
+    /* height: 500px; */
+    /* width: 350px; */
+    height: 80vh;
+    width: 24vw;
+    display: inline-block;
+}
+.leftDiv img{
+    height: inherit;
+    width: inherit;
+    border-radius: 10px;
+}
+.rightDiv{
+    /* height: 500px;
+    width: 350px; */
+    height: 80vh;
+    width: 24vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.insideRightdiv{
+    text-align: center;
+}
+
+.title{
+    font-size: 2.5rem;
+    color: white;
+    margin: 20px 0px;
+}
+
+.enterBtn{
+    color: white;
+    text-decoration: none;
+    border: 2px solid white;
+    /* margin-top: 1.5rem; */
+    padding:  0.5rem 1.5rem;
+    border-radius: 10px;
+    font-size: 1.5rem;
+}
+
+.enterBtn:hover{
+    background-color: white;
+    color: rgb(21 50 74);
+
+}

@@ -1,0 +1,61 @@
+.upContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    /* border: 3px solid black; */
+    height: 82vh;
+    width: 100%;
+    margin-top: 5rem;
+}
+
+.formDiv{
+    border: 3px solid gray;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    background-color: white;
+    /* width: 50%; */
+}
+
+input, button{
+    font-size: 1rem;
+    border: 2px solid gray;
+    margin: 0.5rem;
+    padding: 0.5rem 2rem;
+    border-radius: 0.5rem;
+}
+
+
+#btn{
+    font-size: 1rem;
+    background-color: black;
+    border: 2px solid;
+    margin: 0.5rem;
+    padding: 0.5rem 2rem;
+    border-radius: 0.5rem;
+    border-color: black;
+    color: white;
+}
+
+#image{
+    display: none;
+}
+.row-1{
+    width: 59%;
+}
+
+.row-3{
+    width: 85%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.row-4{
+    text-align: center;
+}
+
+#btn:hover{
+    background-color: rgb(233 233 233);
+    height: 100%;
+    color: black;
+}
