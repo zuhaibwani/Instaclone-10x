@@ -11,6 +11,7 @@ const App = () =>{
         <Route path="/postview" element={<Postview/>}/>
         <Route path="/uploadpost" element={<UploadPost/>}/>
     </Routes>
+   
     </>
   );
 }

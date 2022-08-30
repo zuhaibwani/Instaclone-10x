@@ -50,11 +50,12 @@ export default function UploadPost() {
         setImagePath(base64Path)
         }
       }
+      //REMOVED LINK : https://server-inst.herokuapp.com
     useEffect(()=>{
         const postData = ()=>{
             axios({
             method: "POST",
-            url: "https://server-inst.herokuapp.com/uploadpost",
+            url: "http://localhost:5000/uploadpost",
             data : formData
         }).then(()=>{
             navigate("/postview");

@@ -5,13 +5,18 @@ import { BsHeart } from "react-icons/bs";
 import { BsCursor } from "react-icons/bs";
 // import { BsThreeDots } from "react-icons/bs";
 import { RiDeleteBin3Line } from "react-icons/ri";
-
+import Pagination from './Pagination.js';
 import axios from 'axios';
 
 const Postview = () => {
   const[data, setData] = useState([])
   const [delPost, setDeletePost] = useState(false)
   // let navigate = useNavigate();
+  const [currentPage, setCurrentPage] = useState(1)
+  const [postsPerPage] = useState(2)
+
+
+
 useEffect(() => {
   console.log("Inside useEffect")
   getData()
@@ -23,7 +28,7 @@ const deletePost= (e, curElement)=>{
   if(confirm){
       axios({
         method: "DELETE",
-        url: "https://server-inst.herokuapp.com/deletepost",
+        url: "http://localhost:5000/deletepost",
         data : {id: curElement._id}
       }).then(()=>{
         window.alert("Post deleted successfully!")
@@ -38,10 +43,9 @@ const deletePost= (e, curElement)=>{
 }
 const getData= async()=>{
   try{
-    const res = await fetch("https://server-inst.herokuapp.com/postview")
+    const res = await fetch("http://localhost:5000/postview")
     const actualData= await res.json()
     setData(actualData)
-    // , { 'mode': 'no-cors' }
   }catch(err){
     console.log(err)
   }
@@ -50,13 +54,18 @@ const getData= async()=>{
 }
   // getData()
   
+  const indexOfLastPost = currentPage * postsPerPage
+  const indexOfFirstPost = indexOfLastPost - postsPerPage
+  const currentPosts = data.slice(indexOfFirstPost, indexOfLastPost)
+
+  const paginate = (number) => setCurrentPage(number)
 
   return (
     <>
         <Header/>
         <div className='container'>
           {
-            data.map((curElement, index)=>{
+            currentPosts.map((curElement, index)=>{
               return(
               <div  className='card' key={index}>
                   <div className='cardHead'>
@@ -81,8 +90,10 @@ const getData= async()=>{
            );
             })
           }
+          <div id='pagination'><Pagination postsPerPage={postsPerPage} totalPosts={data.length} paginate={paginate}/></div>
+          
         </div>
-           
+        
     
        
     </>

@@ -10,7 +10,7 @@ const Header = ()=>{
         <>
         <div className="header">
             <div className="logoAndheadingDiv">
-            <Link to="/"><GrInstagram className="logo"/> </Link><Link to="/postview"><h1 className="heading">Instaclone</h1></Link>
+            <Link to="/"><GrInstagram id="logo"/> </Link><Link to="/postview"><h1 className="heading">Instaclone</h1></Link>
             <span className="cameraIcon">
             <Link to="/uploadpost"><BsCamera/></Link>   
             </span>
